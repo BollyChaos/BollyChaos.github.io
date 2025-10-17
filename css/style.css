@@ -1637,3 +1637,10 @@ color: #f00;
 .titlepage {
     padding-bottom: 30px !important;
 }
+
+.perfil-imagen {
+    max-width: 400px;  /* Ancho máximo */
+    max-height: 300px; /* Alto máximo */
+    width: auto;
+    height: auto;
+}
