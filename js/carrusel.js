@@ -114,3 +114,124 @@ document.addEventListener('DOMContentLoaded', function() {
     // Inicializar carrusel
     actualizarCarrusel();
 });
+
+// Productos simples con scroll y expansión
+document.addEventListener('DOMContentLoaded', function() {
+    const productosContainer = document.querySelector('.productos-simple-scroll');
+    const productosItems = document.querySelectorAll('.producto-simple-item');
+    
+    if (!productosContainer || productosItems.length === 0) return;
+    
+    // Inicializar: solo el primer producto expandido
+    productosItems.forEach((producto, index) => {
+        if (index !== 0) {
+            producto.classList.remove('expandido');
+        }
+    });
+    
+    // Configurar productos expandibles
+    productosItems.forEach(producto => {
+        const header = producto.querySelector('.producto-simple-header');
+        const toggleBtn = producto.querySelector('.producto-simple-toggle');
+        const detalle = producto.querySelector('.producto-simple-detalle');
+        
+        if (!header || !detalle) return;
+        
+        function toggleProducto() {
+            const estaExpandido = producto.classList.contains('expandido');
+            
+            if (!estaExpandido) {
+                // Cerrar todos los demás productos
+                productosItems.forEach(otroProducto => {
+                    if (otroProducto !== producto && otroProducto.classList.contains('expandido')) {
+                        otroProducto.classList.remove('expandido');
+                        const otroDetalle = otroProducto.querySelector('.producto-simple-detalle');
+                        if (otroDetalle) {
+                            otroDetalle.style.maxHeight = null;
+                        }
+                    }
+                });
+                
+                // Expandir este producto
+                producto.classList.add('expandido');
+                detalle.style.maxHeight = detalle.scrollHeight + 'px';
+                
+                // Scroll suave para centrar el producto
+                setTimeout(() => {
+                    producto.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'nearest'
+                    });
+                }, 100);
+            } else {
+                // Contraer este producto
+                producto.classList.remove('expandido');
+                detalle.style.maxHeight = null;
+            }
+        }
+        
+        // Event listeners
+        header.addEventListener('click', toggleProducto);
+        
+        if (toggleBtn) {
+            toggleBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                toggleProducto();
+            });
+        }
+        
+        // Accesibilidad con teclado
+        header.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                toggleProducto();
+            }
+        });
+        
+        header.setAttribute('tabindex', '0');
+        header.setAttribute('role', 'button');
+    });
+    
+    // Configurar botones de compra
+    document.querySelectorAll('.btn-detalle-comprar').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            
+            const producto = this.closest('.producto-simple-item');
+            const titulo = producto.querySelector('.producto-simple-titulo').textContent;
+            const precio = producto.querySelector('.producto-simple-precio').textContent;
+            
+            // Simular compra
+            const confirmar = confirm(`¿Comprar "${titulo}" por ${precio}?`);
+            
+            if (confirmar) {
+                // Aquí iría la lógica real de compra
+                alert(`Redirigiendo para comprar: ${titulo}`);
+            }
+        });
+    });
+    
+    // Auto-ocultar indicador de scroll cuando hay scroll
+    productosContainer.addEventListener('scroll', function() {
+        const indicator = document.querySelector('.simple-scroll-indicator');
+        if (indicator) {
+            if (productosContainer.scrollTop > 10) {
+                indicator.style.opacity = '0.3';
+            } else {
+                indicator.style.opacity = '0.8';
+            }
+        }
+    });
+    
+    // Ajustar altura de detalles cuando cambia el tamaño de la ventana
+    window.addEventListener('resize', function() {
+        productosItems.forEach(producto => {
+            if (producto.classList.contains('expandido')) {
+                const detalle = producto.querySelector('.producto-simple-detalle');
+                if (detalle) {
+                    detalle.style.maxHeight = detalle.scrollHeight + 'px';
+                }
+            }
+        });
+    });
+});
