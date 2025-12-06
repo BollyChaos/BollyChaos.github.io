@@ -1023,7 +1023,7 @@
      transition: 0s;
 }
 .header-top {
-    background: url(../images/banner.png);
+    background: url(../images/splashart.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     padding-bottom: 50px;
@@ -1170,18 +1170,34 @@
 }
  .box_bg {
      background: #c3c3c3;
-     padding: 40px 0px 40px 65px;
-     margin-right: 101px;
+    padding: 15px 0px 15px 25px !important; /* Reducción drástica */
+    margin-right: 25px !important;
+    /* Añade estas propiedades para limitar el tamaño */
+    max-width: 400px;
+    width: 100%;
+    height: auto;
+    min-height: 200px; /* Altura mínima reducida */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
  .box_bg_img {
-     margin-right: -84px;
-     box-shadow: #c3c3c3 0px 0px 29px 4px;
-}
- .box_bg_img figure {
-    margin: 0;
-}
- .box_bg_img figure img {
+      margin-right: -40px !important;
+    box-shadow: #c3c3c3 0px 0px 15px 2px;
+    /* Limita el tamaño del contenedor de la imagen */
+    max-width: 300px;
     width: 100%;
+}
+.box_bg_img figure {
+    margin: 0;
+    width: 100%;
+}
+
+.box_bg_img figure img {
+    max-width: 250px !important; /* Fuerza tamaño pequeño */
+    width: 100%;
+    height: auto;
+    display: block;
 }
  .border_right {
     border-right: #f00 solid 6px;
@@ -1643,4 +1659,594 @@ color: #f00;
     max-height: 300px; /* Alto máximo */
     width: auto;
     height: auto;
+}
+
+/* ===== ESTILOS PARA EL TÍTULO CON RECTÁNGULO ROJO ===== */
+.titulo-con-fondo {
+    position: relative;
+    display: inline-block;
+    padding: 20px 40px;
+    margin: 30px 0;
+}
+
+.titulo-con-fondo h2 {
+    color: white;
+    font-size: 3.5rem;
+    position: relative;
+    z-index: 2;
+    margin: 0;
+}
+
+.rectangulo-rojo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(168, 14, 14);
+    z-index: 1;
+    border-radius: 10px;
+}
+
+
+
+/* ===== ESTILOS PARA LOS SUBAPARTADOS ===== */
+.subapartado-card {
+    background: rgb(56, 36, 39);
+    border-radius: 15px;
+    padding: 25px;
+    height: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(255, 0, 0, 0.2);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    margin-top: 30px;
+}
+
+.subapartado-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(220, 20, 60, 0.2);
+}
+
+.subapartado-header {
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid rgba(220, 20, 60, 0.5);
+}
+
+.subapartado-header h3 {
+    color: #fff;
+    font-size: 1.8rem;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    
+}
+
+.subapartado-header i {
+    color: #dc143c;
+    font-size: 1.5rem;
+}
+
+.subapartado-content {
+    color: #b0b0b0;
+    line-height: 1.6;
+}
+
+.subapartado-content p {
+    margin-bottom: 25px;
+    font-size: 1.1rem;
+    min-height: 120px;
+    text-align: justify;
+}
+
+
+
+/* ===== DETALLES EXPANDIBLES ===== */
+.detalle-subapartado {
+    background: rgba(26, 26, 46, 0.95);
+    border-radius: 15px;
+    padding: 40px;
+    margin-top: 30px;
+    border: 1px solid rgba(220, 20, 60, 0.3);
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.btn-cerrar-detalle {
+    background: linear-gradient(45deg, #333, #555);
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+}
+
+.btn-cerrar-detalle:hover {
+    background: linear-gradient(45deg, #444, #666);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .titulo-con-fondo {
+        padding: 15px 30px;
+        margin: 20px 0;
+    }
+    
+    .titulo-con-fondo h2 {
+        font-size: 2.5rem;
+    }
+    
+    .subapartado-card {
+        padding: 20px;
+        margin-top: 15px;
+    }
+    
+    .subapartado-header h3 {
+        font-size: 1.5rem;
+    }
+    
+    .subapartado-content p {
+        min-height: 100px;
+        font-size: 1rem;
+    }
+    
+    .btn-mas-info {
+        padding: 10px 25px;
+        font-size: 0.9rem;
+    }
+    
+    .detalle-subapartado {
+        padding: 25px;
+    }
+}
+
+@media (max-width: 576px) {
+    .titulo-con-fondo h2 {
+        font-size: 2rem;
+    }
+    
+    .rectangulo-rojo {
+        transform: skew(-10deg);
+    }
+}
+/* ===== LÍNEA SEPARADORA ROJA ===== */
+.linea-separadora-roja {
+    width: 100wv;
+    height: 4px;
+    background: linear-gradient(90deg, #8b0000, #dc143c, #8b0000);
+    margin: 80px auto -30px auto;
+    border-radius: 2px;
+    position: relative;
+    z-index: 3;
+}
+
+.linea-separadora-roja::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: red;
+    border-radius: 3px;
+    opacity: 0.7;
+    filter: blur(2px);
+    z-index: 2;
+}
+/* ===== ESTILOS PARA EQUIPO EN 2 COLUMNAS ===== */
+
+.equipo-card {
+    background: rgb(56, 36, 39);
+    border-radius: 15px;
+    padding: 20px;
+    height: 100%;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(220, 20, 60, 0.2);
+}
+
+.equipo-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(220, 20, 60, 0.2);
+    border-color: rgba(220, 20, 60, 0.4);
+}
+
+/* Reducir tamaño de las fotos */
+.perfil-container {
+    text-align: center;
+    padding: 10px;
+}
+
+.perfil-imagen {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #dc143c;
+    box-shadow: 0 0 15px rgba(220, 20, 60, 0.3);
+    transition: all 0.3s ease;
+}
+
+.equipo-card:hover .perfil-imagen {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(220, 20, 60, 0.5);
+}
+
+/* Ajustar texto */
+#equipo .equipo-card .Games h3 {
+    color: #fff;
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+#equipo .equipo-card .Games p {
+    color: #b0b0b0;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.Games strong {
+    color: #dc143c;
+    font-size: 1rem;
+}
+
+/* Espaciado entre tarjetas */
+.margin_bottom {
+    margin-bottom: 25px;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .perfil-imagen {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .Games h3 {
+        font-size: 1.3rem;
+    }
+    
+    .Games p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .equipo-card {
+        padding: 15px;
+    }
+    
+    .perfil-imagen {
+        width: 90px;
+        height: 90px;
+    }
+    
+    /* En móviles, volver a una columna */
+    .col-md-6 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    .perfil-imagen {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .Games h3 {
+        font-size: 1.2rem;
+    }
+    
+    .Games p {
+        font-size: 0.85rem;
+    }
+}
+
+/* ===== CARRUSEL DE PERSONAJES ===== */
+
+.personajes-carrusel {
+    margin: 25px 0;
+    position: relative;
+}
+
+.carrusel-container {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(220, 20, 60, 0.2);
+}
+
+.carrusel-track {
+    display: flex;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carrusel-slide {
+    min-width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.personaje-foto {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 3px solid rgba(220, 20, 60, 0.5);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.personaje-foto:hover {
+    transform: scale(1.1);
+    border-color: #dc143c;
+    box-shadow: 0 0 20px rgba(220, 20, 60, 0.7);
+}
+
+.personaje-foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.personaje-foto:hover img {
+    transform: scale(1.1);
+}
+
+.personaje-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 8px 0;
+    text-align: center;
+    font-size: 0.9rem;
+    font-weight: bold;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.personaje-foto:hover .personaje-overlay {
+    transform: translateY(0);
+}
+
+/* Botones del carrusel */
+.carrusel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(220, 20, 60, 0.8);
+    color: white;
+    border: none;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    transition: all 0.3s ease;
+    opacity: 0.7;
+}
+
+.carrusel-btn:hover {
+    background: #dc143c;
+    opacity: 1;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.carrusel-prev {
+    left: 10px;
+}
+
+.carrusel-next {
+    right: 10px;
+}
+
+/* Indicadores */
+.carrusel-indicadores {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.indicador {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.indicador.activo {
+    background: #dc143c;
+    transform: scale(1.2);
+}
+
+.indicador:hover {
+    background: #dc143c;
+}
+
+/* Modal para información ampliada */
+.personaje-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.modal-contenido {
+    background: #1a1a2e;
+    width: 90%;
+    max-width: 800px;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 2px solid #dc143c;
+    box-shadow: 0 0 40px rgba(220, 20, 60, 0.5);
+    display: flex;
+    animation: slideUp 0.4s ease;
+}
+
+@keyframes slideUp {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.modal-cerrar {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(220, 20, 60, 0.8);
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    z-index: 10;
+    transition: all 0.3s ease;
+}
+
+.modal-cerrar:hover {
+    background: #dc143c;
+    transform: rotate(90deg);
+}
+
+.modal-imagen-container {
+    flex: 1;
+    overflow: hidden;
+}
+
+#modalImagen {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.modal-imagen-container:hover #modalImagen {
+    transform: scale(1.05);
+}
+
+.modal-info {
+    flex: 1;
+    padding: 40px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#modalNombre {
+    color: #dc143c;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+#modalRol {
+    color: #b0b0b0;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+#modalDescripcion {
+    color: #d0d0d0;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .carrusel-container {
+        height: 180px;
+    }
+    
+    .personaje-foto {
+        width: 130px;
+        height: 130px;
+    }
+    
+    .modal-contenido {
+        flex-direction: column;
+        width: 95%;
+        max-height: 90vh;
+    }
+    
+    .modal-imagen-container {
+        height: 250px;
+    }
+    
+    .modal-info {
+        padding: 25px;
+    }
+    
+    #modalNombre {
+        font-size: 2rem;
+    }
+    
+    #modalRol {
+        font-size: 1.2rem;
+    }
+    
+    #modalDescripcion {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .carrusel-container {
+        height: 160px;
+    }
+    
+    .personaje-foto {
+        width: 110px;
+        height: 110px;
+    }
+    
+    .carrusel-btn {
+        width: 30px;
+        height: 30px;
+    }
 }

@@ -32,6 +32,7 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
 </head>
 <!-- body -->
+<script src="js/carrusel.js"></script>
 
 <body class="main-layout">
     <!-- loader  -->
@@ -74,6 +75,7 @@
                                             <ul class="menu-area-main">
                                                 <li class="active"> <a href="#games">Juego</a> </li>
                                                 <li> <a href="#empresa">Empresa</a> </li>
+                                                <li> <a href="#juego">Legado de Sangre</a></li>
                                                 <li> <a href="#equipo">Equipo</a> </li>
                                                 <li> <a href="#contact">Redes Sociales</a> </li>
                                             </ul>
@@ -109,7 +111,10 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="titlepage">
-                        <h2>Empresa</h2>
+                        <div class="titulo-con-fondo">
+                            <div class="rectangulo-rojo"></div>
+                            <h2>Empresa</h2>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -119,7 +124,7 @@
                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
                     <div class="box_bg">
                         <div class="box_bg_img">
-                            <figure><img src="images/logo.jpg" style="max-width: 500px; height: auto;"></figure>
+                            <figure><img src="images/logo.jpg" style="max-width: 350px; height: auto;"></figure>
                         </div>
                     </div>
                 </div>
@@ -127,140 +132,369 @@
                     <div class="box_text">
                         <p>Somos una empresa de videojuegos compuesta por seis estudiantes del Grado en Diseño y
                             Desarrollo de Videojuegos de la Universidad Rey Juan Carlos.</p>
-
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <div class="linea-separadora-roja"></div>
+
+    <div id="juego" class="We_are">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="titlepage">
+                        <div class="titulo-con-fondo">
+                            <div class="rectangulo-rojo"></div>
+                            <h2>Legado de Sangre</h2>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <!-- Sección de subapartados -->
+            <div class="row">
+                <!-- Subapartado 1: Historia -->
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 mb-4">
+                    <div class="subapartado-card">
+                        <div class="subapartado-header">
+                            <h3><i class="fas fa-book"></i> Historia</h3>
+                        </div>
+                        <div class="subapartado-content">
+                            <p>Alistair Blackwood construyó su hogar a base de esfuerzo y sacrificio, pero la ambición 
+                                de su familia acabó con su vida condenando a la familia a vivir durante la eternidad
+                                presa de una maldición.<br><br>
+                                Alex, heredero por sorpresa de esta vieja mansión, tendrá que enfrentarse a los misterios
+                                que allí se ocultan de día pero que salen al caer la noche. 
+                                Mediante cartas, gestión de recursos y exploración, deberá descubrir la verdad sobre su linaje 
+                                y lo que allí ocurrió tantos años atrás.
+                                <br><br>¿Logrará sobrevivir? ¿O sucumbirá al poder de la maldición? </p>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Subapartado 2: Personajes -->
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 mb-4">
+                    <div class="subapartado-card">
+                        <div class="subapartado-header">
+                            <h3><i class="fas fa-users"></i> Personajes</h3>
+                        </div>
+                        <div class="subapartado-content">
+                            <p>Conoce al protagonista de la historia, su fiel ayudante y al resto de enemigos a los que
+                                se enfrenta. </p>
+
+                            <!-- Carrusel de Personajes -->
+                            <div class="personajes-carrusel">
+                                <!-- Contenedor del carrusel -->
+                                <div class="carrusel-container">
+                                    <!-- Botón anterior -->
+                                    <button class="carrusel-btn carrusel-prev">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </button>
+
+                                    <!-- Fotos de personajes -->
+                                    <div class="carrusel-track">
+                                        <!-- Personaje 1 -->
+                                        <div class="carrusel-slide" data-personaje="alex">
+                                            <div class="personaje-foto">
+                                                <img src="images/Alex2.png" alt="Alex"
+                                                    data-info="Alex|Protagonista|El último descendiente de la familia Blackwood, portador de una maldición ancestral. Debe enfrentar su destino mientras descubre la verdad sobre su linaje.">
+                                                <div class="personaje-overlay">
+                                                    <span>Alex</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Personaje 2 -->
+                                        <div class="carrusel-slide" data-personaje="eleanor">
+                                            <div class="personaje-foto">
+                                                <img src="images/Eleanor.png" alt="Eleanor"
+                                                    data-info="Eleanor|Aliada|Misteriosa figura que conoce todos los secretos de la familia Blackwood. Ayuda a Alex en su paso por la mansión.">
+                                                <div class="personaje-overlay">
+                                                    <span>Eleanor</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Personaje 3 -->
+                                        <div class="carrusel-slide" data-personaje="padres">
+                                            <div class="personaje-foto">
+                                                <img src="images/padres.png" alt="Padres"
+                                                    data-info="Padres|Enemigo|Poltergeists molestos que acechan la mansión. Son los culpables y originarios de la maldición.">
+                                                <div class="personaje-overlay">
+                                                    <span>Padres</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Personaje 4 -->
+                                        <div class="carrusel-slide" data-personaje="Abuelo">
+                                            <div class="personaje-foto">
+                                                <img src="images/abuelo.png" alt="Abuelo"
+                                                    data-info="Abuelo|Enemigo|Monstruo ciego y deforme que acecha los pasillos de la mansión. Fue un daño colateral de la maldición y ahora vaga enfadado.">
+                                                <div class="personaje-overlay">
+                                                    <span>Abuelo</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Personaje 5 -->
+                                        <div class="carrusel-slide" data-personaje="tios">
+                                            <div class="personaje-foto">
+                                                <img src="images/tios.png" alt="Tíos"
+                                                    data-info="Tíos|Enemigo|Caníbal extremadamente agresivo sin rostro con ansias de sangre. Colaboraron en originar la maldición.">
+                                                <div class="personaje-overlay">
+                                                    <span>Tíos</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Personaje 6 -->
+                                        <div class="carrusel-slide" data-personaje="hijo">
+                                            <div class="personaje-foto">
+                                                <img src="images/hijo2.png" alt="Hijo"
+                                                    data-info="Hijo|Enemigo|Diablo travieso y juguetón oculto en lo más profundo de la mansión. Fue víctima de la maldición y ahora busca venganza.">
+                                                <div class="personaje-overlay">
+                                                    <span>Hijo</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Personaje 7 -->
+                                        <div class="carrusel-slide" data-personaje="hija">
+                                            <div class="personaje-foto">
+                                                <img src="images/hija.jpg" alt="Hija"
+                                                    data-info="Hija|Enemigo| Espíritu infantil que echa de menos a su hermano. Intentó luchar contra la maldición pero no tuvo escapatoria.">
+                                                <div class="personaje-overlay">
+                                                    <span>Hija</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <!-- Botón siguiente -->
+                                    <button class="carrusel-btn carrusel-next">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </button>
+                                </div>
+
+                                <!-- Indicadores/puntos -->
+                                <div class="carrusel-indicadores">
+                                    <span class="indicador activo" data-slide="0"></span>
+                                    <span class="indicador" data-slide="1"></span>
+                                    <span class="indicador" data-slide="2"></span>
+                                    <span class="indicador" data-slide="3"></span>
+                                </div>
+                            </div>
+
+                            <!-- Modal para información ampliada -->
+                            <div class="personaje-modal" id="personajeModal">
+                                <div class="modal-contenido">
+                                    <button class="modal-cerrar">
+                                        <i class="fas fa-times"></i>
+                                    </button>
+                                    <div class="modal-imagen-container">
+                                        <img id="modalImagen" src="" alt="Personaje">
+                                    </div>
+                                    <div class="modal-info">
+                                        <h3 id="modalNombre"></h3>
+                                        <h4 id="modalRol"></h4>
+                                        <p id="modalDescripcion"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Subapartado 3: Productos -->
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 mb-4">
+                    <div class="subapartado-card">
+                        <div class="subapartado-header">
+                            <h3><i class="fas fa-gamepad"></i> Productos</h3>
+                        </div>
+                        <div class="subapartado-content">
+                            <p>Explora nuestra línea de productos: desde el videojuego principal hasta merchandising
+                                exclusivo y contenido adicional.</p>
+                            <button class="btn-mas-info" data-target="productos">Ver más</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contenido expandible para cada subapartado -->
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="historia-detalle" class="detalle-subapartado" style="display:none;">
+                        <!-- Contenido de historia se cargará aquí -->
+                    </div>
+
+                    <div id="personajes-detalle" class="detalle-subapartado" style="display:none;">
+                        <!-- Contenido de personajes se cargará aquí -->
+                    </div>
+
+                    <div id="productos-detalle" class="detalle-subapartado" style="display:none;">
+                        <!-- Contenido de productos se cargará aquí -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
     <!-- end We are -->
+
+    <div class="linea-separadora-roja"></div>
     <!-- our -->
     <div id="equipo" class="our">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
                     <div class="titlepage">
-                        <h2>Equipo</h2>
+                        <div class="titulo-con-fondo">
+                            <div class="rectangulo-rojo"></div>
+                            <h2>Equipo</h2>
+                        </div>
                     </div>
                 </div>
             </div>
+
             <div class="row">
-                <div class="col-md-12 margin_bottom">
-                    <div class="row">
-
-                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
-                            <div class="perfil-container">
-                                <img src="images/equipo/edu.jpg" alt="Perfil Programador" class="perfil-imagen" />
+                <!-- Miembro 1 -->
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 margin_bottom">
+                    <div class="equipo-card">
+                        <div class="row align-items-center">
+                            <div class="col-md-4">
+                                <div class="perfil-container">
+                                    <img src="images/equipo/edu.jpg" alt="Perfil Programador" class="perfil-imagen" />
+                                </div>
                             </div>
-                        </div>
-
-                        <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12">
-
-                            <div class="Games">
-                                <h3>Eduard Florea</h3>
-                                <p><strong>Programador & Game Designer</strong><br>Donde la visión creativa y la
-                                    ejecución técnica se fusionan. No solo imagina experiencias divertidas, construyo
-                                    los sistemas que las hacen posibles. Su código no solo funciona... juega.</p>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-12 margin_bottom">
-                    <div class="row">
-
-                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
-                            <div class="perfil-container">
-                                <img src="images/equipo/lau.jpg" alt="Perfil Diseñadora" class="perfil-imagen">
-                            </div>
-                        </div>
-
-                        <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12">
-
-                            <div class="Games">
-                                <h3>Laura Facenda</h3>
-                                <p><strong>Diseñadora 2D & Game Designer</strong><br>Donde la estética y la jugabilidad
-                                    se funden. No solo crea mundos hermosos, diseña las reglas para que vivas aventuras
-                                    inolvidables en ellos. Su lápiz diseña tanto el aspecto como el alma del juego.</p>
-
+                            <div class="col-md-8">
+                                <div class="Games">
+                                    <h3>Eduard Florea</h3>
+                                    <p><strong>Programador & Game Designer</strong><br>Donde la visión creativa y la
+                                        ejecución técnica se fusionan. No solo imagina experiencias divertidas,
+                                        construyo
+                                        los sistemas que las hacen posibles. Su código no solo funciona... juega.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-12 margin_bottom">
-                    <div class="row">
 
-                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
-                            <div class="perfil-container">
-                                <img src="images/equipo/adri.jpg" alt="Backend" class="perfil-imagen" />
+                <!-- Miembro 2 -->
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 margin_bottom">
+                    <div class="equipo-card">
+                        <div class="row align-items-center">
+                            <div class="col-md-4">
+                                <div class="perfil-container">
+                                    <img src="images/equipo/lau.jpg" alt="Perfil Diseñadora" class="perfil-imagen">
+                                </div>
                             </div>
-                        </div>
-
-                        <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12">
-
-                            <div class="Games">
-                                <h3>Adrián Gómez-Lobo</h3>
-                                <p><strong>Backend</strong><br>Mientras el frontend brilla, el backend es la fuerza que
-                                    lo hace posible. Es el encargado de construir los cimientos invisibles donde la
-                                    magia ocurre de verdad.</p>
-
+                            <div class="col-md-8">
+                                <div class="Games">
+                                    <h3>Laura Facenda</h3>
+                                    <p><strong>Diseñadora 2D & Game Designer</strong><br>Donde la estética y la
+                                        jugabilidad
+                                        se funden. No solo crea mundos hermosos, diseña las reglas para que vivas
+                                        aventuras
+                                        inolvidables en ellos. Su lápiz diseña tanto el aspecto como el alma del juego.
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
+                <!-- Miembro 3 -->
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 margin_bottom">
+                    <div class="equipo-card">
+                        <div class="row align-items-center">
+                            <div class="col-md-4">
+                                <div class="perfil-container">
+                                    <img src="images/equipo/adri.jpg" alt="Backend" class="perfil-imagen" />
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="Games">
+                                    <h3>Adrián Gómez-Lobo</h3>
+                                    <p><strong>Backend</strong><br>Mientras el frontend brilla, el backend es la fuerza
+                                        que
+                                        lo hace posible. Es el encargado de construir los cimientos invisibles donde la
+                                        magia ocurre de verdad.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Miembro 4 -->
-                <div class="col-md-12 margin_bottom">
-                    <div class="row">
-                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
-                            <div class="perfil-container">
-                                <img src="images/equipo/victor.jpg" alt="Game y Level Designer"class="perfil-imagen"  />
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 margin_bottom">
+                    <div class="equipo-card">
+                        <div class="row align-items-center">
+                            <div class="col-md-4">
+                                <div class="perfil-container">
+                                    <img src="images/equipo/victor.jpg" alt="Game y Level Designer"
+                                        class="perfil-imagen" />
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12">
-                            <div class="Games">
-                                <h3>Víctor Manuel Moreno</h3>
-                                <p><strong>Game & Level Designer</strong> <br> Diseña las reglas del mundo y construye
-                                    los parques de atracciones donde las vivirás. Crea no solo lo que juegas, sino cómo
-                                    y dónde lo juegas.</p>
+                            <div class="col-md-8">
+                                <div class="Games">
+                                    <h3>Víctor Manuel Moreno</h3>
+                                    <p><strong>Game & Level Designer</strong> <br> Diseña las reglas del mundo y
+                                        construye
+                                        los parques de atracciones donde las vivirás. Crea no solo lo que juegas, sino
+                                        cómo
+                                        y dónde lo juegas.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Miembro 5 -->
-                <div class="col-md-12 margin_bottom">
-                    <div class="row">
-                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
-                            <div class="perfil-container">
-                                <img src="images/equipo/josito.jpg" alt="Programador" class="perfil-imagen" />
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 margin_bottom">
+                    <div class="equipo-card">
+                        <div class="row align-items-center">
+                            <div class="col-md-4">
+                                <div class="perfil-container">
+                                    <img src="images/equipo/josito.jpg" alt="Programador" class="perfil-imagen" />
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12">
-                            <div class="Games">
-                                <h3>Jose Manuel Pastor</h3>
-                                <p><strong>Programador & Compositor</strong> <br> Mientras sus líneas de código
-                                    construyen mundos
-                                    virtuales, sus acordes les dan alma sonora. Programa no solo lo que ves, sino lo que
-                                    sientes. Compone no solo lo que escuchas, sino lo que vives.</p>
+                            <div class="col-md-8">
+                                <div class="Games">
+                                    <h3>Jose Manuel Pastor</h3>
+                                    <p><strong>Programador & Compositor</strong> <br> Mientras sus líneas de código
+                                        construyen mundos virtuales, sus acordes les dan alma sonora. Programa no solo
+                                        lo que ves, sino lo que
+                                        sientes. Compone no solo lo que escuchas, sino lo que vives.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Miembro 6 -->
-                <div class="col-md-12">
-                    <div class="row">
-                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
-                            <div class="perfil-container">
-                                <img src="images/equipo/hector.jpg" alt="Diseñador3D" class="perfil-imagen"/>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 margin_bottom">
+                    <div class="equipo-card">
+                        <div class="row align-items-center">
+                            <div class="col-md-4">
+                                <div class="perfil-container">
+                                    <img src="images/equipo/hector.jpg" alt="Diseñador3D" class="perfil-imagen" />
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12">
-                            <div class="Games">
-                                <h3>Héctor Santamaría</h3>
-                                <p><strong>Diseñador 3D & Animador</strong><br>No solo crea personajes y mundos en 3D...
-                                    les insufla el alma que los hace respirar. De la forma estática al movimiento
-                                    expresivo, su arte cuenta historias a través de cada frame y cada pose.</p>
+                            <div class="col-md-8">
+                                <div class="Games">
+                                    <h3>Héctor Santamaría</h3>
+                                    <p><strong>Diseñador 3D & Animador</strong><br>No solo crea personajes y mundos en
+                                        3D...
+                                        les insufla el alma que los hace respirar. De la forma estática al movimiento
+                                        expresivo, su arte cuenta historias a través de cada frame y cada pose.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
